@@ -21,10 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 try:
-    from artist_portfolio.secret_key import secret_key
+    from artist_portfolio.local_settings import SECRET_KEY
 except Exception as ex:
-    print("Error: Please, place a correct 'secret_key.py' file containing the secret key in the program directory.")
-SECRET_KEY = secret_key
+    print("Error: Please, insert a correct SECRET_KEY variable and value into local_settings.py.")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -80,12 +79,10 @@ WSGI_APPLICATION = 'artist_portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+try:
+    from artist_portfolio.local_settings import DATABASES
+except Exception:
+    print("Error: Please, insert a correct DATABASES variable and value into local_settings.py.")
 
 
 # Password validation
