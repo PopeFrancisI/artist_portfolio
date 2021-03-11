@@ -1,6 +1,6 @@
 
-database.py
-secret_keys.py
+artist_portfolio/databases.py
+artist_portfolio/secret_keys.py
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,django,pycharm
