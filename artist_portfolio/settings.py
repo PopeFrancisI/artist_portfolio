@@ -21,9 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 try:
-    from secret_key import SECRET_KEY
+    from artist_portfolio.secret_key import secret_key
 except Exception as ex:
     print("Error: Please, place a correct 'secret_key.py' file containing the secret key in the program directory.")
+SECRET_KEY = secret_key
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'portfolio',
 ]
 
 MIDDLEWARE = [
