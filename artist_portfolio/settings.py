@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 try:
     from secret_key import SECRET_KEY
 except Exception as ex:
-    print(ex)
+    print("Error: Please, place a correct 'secret_key.py' file containing the secret key in the program directory.")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
