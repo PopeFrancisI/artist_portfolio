@@ -1,5 +1,6 @@
 
-secret_key.py
+database.py
+secret_keys.py
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,django,pycharm
