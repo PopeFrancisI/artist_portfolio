@@ -10,3 +10,11 @@ class Artwork(models.Model):
 
     def __str__(self):
         return self.image.name
+
+
+class Album(models.Model):
+    title = models.CharField(max_length=256)
+    artworks = models.ManyToManyField(Artwork)
+
+    def __str__(self):
+        return self.title
