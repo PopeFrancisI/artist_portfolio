@@ -10,7 +10,8 @@
     <ul>
         {% for album in album_list %}
             <li>
-            <img src="{{ album.get_cover_url }}">
+                <img src="{{ album.get_cover_url }}">
+                <h2>{{ album.title }}</h2>
             </li>
         {% endfor %}
     </ul>
