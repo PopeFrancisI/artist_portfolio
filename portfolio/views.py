@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views.generic import ListView
 
 from portfolio import models
-from portfolio.models import Album
+from portfolio.models import Album, Artwork
 
 
 class IndexView(views.View):
@@ -19,3 +19,11 @@ class GalleryView(ListView):
     model = Album
     ordering = 'title'
     template_name = 'gallery.html'
+
+
+class AlbumView(views.View):
+
+    def get(self, request):
+        # TODO: pass artworks matching album in context
+        context = {}
+        return render(request, template_name='album.html')
