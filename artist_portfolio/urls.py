@@ -18,11 +18,12 @@ from django.contrib import admin
 from django.urls import path
 
 from artist_portfolio import settings
-from portfolio.views import IndexView
+from portfolio.views import IndexView, GalleryView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
+    path('gallery/', GalleryView.as_view(), name='gallery'),
 ]
 
 if settings.DEBUG:
