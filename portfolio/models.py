@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 from artist_portfolio.settings import STATIC_URL
 
@@ -16,6 +17,7 @@ class Artwork(models.Model):
 
 class Album(models.Model):
     title = models.CharField(max_length=256)
+    slug = models.SlugField(max_length=256, default='', editable=False)
     artworks = models.ManyToManyField(Artwork, blank=True)
 
     def get_cover_url(self):
@@ -31,6 +33,10 @@ class Album(models.Model):
             return newest_artwork
         except Exception:
             return None
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
