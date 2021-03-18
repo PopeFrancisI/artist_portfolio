@@ -10,6 +10,8 @@ class Artwork(models.Model):
     image = models.ImageField(upload_to='artworks')
     time_created = models.DateTimeField(auto_now_add=True)
     time_modified = models.DateTimeField(auto_now=True)
+    year_completed = models.IntegerField()
+    technique = models.CharField(max_length=256)
 
     def __str__(self):
         return self.image.name
