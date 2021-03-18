@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 from django.utils.text import slugify
 
@@ -10,8 +12,9 @@ class Artwork(models.Model):
     image = models.ImageField(upload_to='artworks')
     time_created = models.DateTimeField(auto_now_add=True)
     time_modified = models.DateTimeField(auto_now=True)
-    year_completed = models.IntegerField(blank=True)
+    year_completed = models.IntegerField(blank=True, default=datetime.now().year)
     technique = models.CharField(max_length=256, blank=True)
+    albums = models.ManyToManyField('Album', blank=True)
 
     def __str__(self):
         return self.image.name
@@ -20,7 +23,7 @@ class Artwork(models.Model):
 class Album(models.Model):
     title = models.CharField(max_length=256)
     slug = models.SlugField(max_length=256, default='', editable=False)
-    artworks = models.ManyToManyField(Artwork, blank=True)
+    artworks = models.ManyToManyField(Artwork, through=Artwork.albums.through, blank=True)
 
     def get_cover_url(self):
         newest_artwork = self.get_newest_artwork()
