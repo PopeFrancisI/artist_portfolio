@@ -6,6 +6,13 @@
 </head>
 <body>
 
+    {% for artwork in album_artworks %}
+        <ul>
+            <li>
+                <img src="{{ artwork.image.url }}">
+            </li>
+        </ul>
+    {% endfor %}
 
 
 </body>

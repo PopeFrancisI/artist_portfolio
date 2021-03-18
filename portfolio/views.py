@@ -1,8 +1,6 @@
 from django import views
-from django.http import response
 from django.shortcuts import render
 from django.views.generic import ListView
-
 from portfolio import models
 from portfolio.models import Album, Artwork
 
@@ -23,7 +21,8 @@ class GalleryView(ListView):
 
 class AlbumView(views.View):
 
-    def get(self, request):
-        # TODO: pass artworks matching album in context
-        context = {}
-        return render(request, template_name='album.html')
+    def get(self, request, title):
+        artworks = Artwork.objects.filter(album__title=title)
+        print(artworks)
+        context = {'album_artworks': artworks}
+        return render(request, template_name='album.html', context=context)
