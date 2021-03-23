@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Album</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
+{% block content %}
     {% for artwork in album_artworks %}
         <ul>
             <li>
@@ -13,7 +8,4 @@
             </li>
         </ul>
     {% endfor %}
-
-
-</body>
-</html>
+{% endblock %}
