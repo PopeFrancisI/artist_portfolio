@@ -16,6 +16,11 @@ class Artwork(models.Model):
     technique = models.CharField(max_length=256, blank=True)
     albums = models.ManyToManyField('Album', blank=True)
 
+    def delete(self, using=None, keep_parents=False):
+        storage, path = self.image.storage, self.image.path
+        super().delete(using, keep_parents)
+        storage.delete(path)
+
     def __str__(self):
         return self.image.name
 
