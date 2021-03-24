@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
     path('gallery/', GalleryView.as_view(), name='gallery'),
-    path('gallery/<str:title>/', AlbumView.as_view(), name='album'),
+    path('gallery/<str:title_slug>/', AlbumView.as_view(), name='album'),
 ]
 
 if settings.DEBUG:
