@@ -23,6 +23,5 @@ class AlbumView(views.View):
 
     def get(self, request, title_slug):
         artworks = Artwork.objects.filter(album__slug=title_slug)
-        print(artworks)
         context = {'album_artworks': artworks}
         return render(request, template_name='album.html', context=context)
