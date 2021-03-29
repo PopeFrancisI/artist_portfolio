@@ -1,0 +1,57 @@
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    }
+
+.dropdown-m{
+    position: absolute;
+    min-width: 160px;
+    background: white;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: transform 0.25s linear;
+    z-index: 8000;
+    width: 100%;
+}
+
+
+.navbar {
+    position: relative;
+    padding: 0px;
+    z-index: 9000;
+}
+
+.nav-item {
+    position: relative;
+    width: 15em;
+    height: 4em;
+    background: #000000;
+    z-index: 9000;
+}
+
+.nav-link {
+    position: relative;
+    background: #009999;
+    z-index: 9999;
+    size: auto;
+}
+
+.nav-link img {
+    size: auto;
+}
+
+/*.show .dropdown-m {*/
+/*    background: #0dcaf0;*/
+/*    z-index: 1;*/
+/*    transform: translateY(0%);*/
+/*}*/
+
+.dropdown:hover .dropdown-m {
+    transform: translateY(0%);
+    visibility: visible;
+}
+
+/*.show .dropdown:hover .dropdown-m {*/
+/*    visibility: visible;*/
+/*}*/
+
