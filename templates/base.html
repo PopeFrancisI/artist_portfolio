@@ -24,36 +24,37 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link" href="{% url 'gallery' %}">
-                    <img src="{% static 'default_images/default_icon.png' %}">
+                    <img src="{% static 'default_images/default_icon_yellow.png' %}">
                 </a>
                 <div class="dropdown-m dropdown-profile">
                     bong
-                    <img class="navbar-tile" src="{% static STATIC_URL %}/default_images/test_navbar_tile.png">
+                    <img class="navbar-dropdown-tile" src="{% static STATIC_URL %}/default_images/test_navbar_tile.png">
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link" href="{% url 'gallery' %}">
-                    <img src="{% static 'default_images/default_icon.png' %}">
+                    <img src="{% static 'default_images/default_icon_magenta.png' %}">
                 </a>
                 <div class="dropdown-m dropdown-gallery">
                     {% for album in albums %}
                         <a class="dropdown-item" href="{% url 'album' title_slug=album.slug %}">{{ album.title }}</a>
                     {% endfor %}
-                    <img class="navbar-tile" src="{% static STATIC_URL %}/default_images/test_navbar_tile.png">
+                    <img class="navbar-dropdown-tile" src="{% static STATIC_URL %}/default_images/test_navbar_tile.png">
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link" href="{% url 'gallery' %}">
-                    <img src="{% static 'default_images/default_icon.png' %}">
+                    <img src="{% static 'default_images/default_icon_cyan.png' %}">
                 </a>
                 <div class="dropdown-m dropdown-contact">
                     bong
-                    <img class="navbar-tile" src="{% static STATIC_URL %}/default_images/test_navbar_tile.png">
+                    <img class="navbar-dropdown-tile" src="{% static STATIC_URL %}/default_images/test_navbar_tile.png">
                 </div>
             </li>
         </ul>
     </div>
 </nav>
+<div class="navbar-tile"></div>
 
 {% block content %}
 {% endblock %}
