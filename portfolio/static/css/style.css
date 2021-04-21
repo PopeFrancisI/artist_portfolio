@@ -14,11 +14,33 @@
     width: 100%;
 }
 
+.dropdown-profile {
+    background-color: yellow;
+}
+
+.dropdown-gallery {
+    background-color: magenta;
+}
+
+.dropdown-contact {
+    background-color: cyan;
+}
+
 
 .navbar {
     position: relative;
     padding: 0px;
     z-index: 9000;
+    background-color: black;
+}
+
+.navbar-black {
+    background-color: black;
+}
+
+.navbar-tile {
+    transform: translateY(100%);
+    width: 100%;
 }
 
 .nav-item {
