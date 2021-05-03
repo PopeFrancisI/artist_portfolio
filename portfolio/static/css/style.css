@@ -1,11 +1,13 @@
 .carousel-inner img {
     width: 100%;
     height: 100%;
-    }
+}
 
 .dropdown-m {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
     position: absolute;
-    min-width: 50px;
     background: white;
     visibility: hidden;
     transform: translateY(-100%);
@@ -26,10 +28,9 @@
     background-color: cyan;
 }
 
-
 .navbar {
     position: relative;
-    padding: 0px;
+    padding: 0;
     z-index: 9000;
     background-color: black;
 }
@@ -38,10 +39,6 @@
     background-color: black;
 }
 
-.navbar-dropdown-tile {
-    transform: translateY(50%);
-    width: 100%;
-}
 
 .navbar-tile {
     position: relative;
@@ -49,13 +46,18 @@
     width: 100%;
     background-image: url("/static/default_images/test_navbar_tile.png");
     background-repeat: repeat-x;
-    padding: 1em;
+    padding: 1vw;
+}
+
+.navbar-dropdown-tile {
+    transform: translateY(100%);
+    position: fixed;
+    bottom: 0;
 }
 
 .nav-item {
     position: relative;
-    width: 15em;
-    height: 4em;
+    width: 15vw;
     background: #000000;
     z-index: 9000;
 }
@@ -79,4 +81,16 @@
 #carousel {
     position: relative;
     z-index: 8500;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    margin: 1vw;
+}
+
+#gallery {
+    width: 100%;
 }

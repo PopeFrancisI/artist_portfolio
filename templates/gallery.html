@@ -2,13 +2,14 @@
 
 {% block content %}
 
-    <ul>
+    <div class="container flex-container flex-wrap justify-content-between" id="gallery">
         {% for album in album_list %}
-            <li>
+            <div class="flex-item">
                 <img src="{{ album.get_cover_url }}">
                 <h2>{{ album.title }}</h2>
-            </li>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
+
 
 {% endblock %}
