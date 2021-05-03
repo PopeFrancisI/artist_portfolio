@@ -44,6 +44,19 @@ class Album(models.Model):
         except Exception:
             return None
 
+    def get_artworks_count(self):
+        artworks_count = self.artworks.count()
+        return artworks_count
+
+    def get_artworks_count_ratio(self):
+        try:
+            album_artwork_count = self.get_artworks_count()
+            ratio = album_artwork_count / Artwork.objects.count()
+            return ratio
+        except Exception as e:
+            print(e)
+            return 0
+
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)

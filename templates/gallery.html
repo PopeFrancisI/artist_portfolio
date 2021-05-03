@@ -2,14 +2,18 @@
 
 {% block content %}
 
-    <div class="container flex-container flex-wrap justify-content-between" id="gallery">
+    <div class="flex-container flex-wrap justify-content-around align-items-center" id="gallery">
         {% for album in album_list %}
-            <div class="flex-item">
-                <img src="{{ album.get_cover_url }}">
-                <h2>{{ album.title }}</h2>
+            <div class="flex-item gallery-album-container flex-container flex-column align-items-center justify-content-center">
+                    <img class="gallery-cover-image" src="{{ album.get_cover_url }}"
+                         style="
+                                 width: calc(30% + 100 * {{ album.get_artworks_count_ratio }}%);
+                                 height: 100%;
+                         "
+                    >
+                    <h2>{{ album.title }}</h2>
             </div>
         {% endfor %}
     </div>
-
 
 {% endblock %}
